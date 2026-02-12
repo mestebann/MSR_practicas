@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 
-<robot name="plataforma">
+<robot name="platform">
 
     <material name="green">
-        <color rgba="0 1 1 1" />
+        <color rgba="0 1 0 1" />
     </material>
 
-    <link name="plataforma_link">
+    <link name="platform_link">
 
         <inertial>
             <origin xyz="0 0 0" />
@@ -18,7 +18,7 @@
         <visual>
             <origin xyz="0 0 0" />
             <geometry>
-                <box size="3 1 0.1" />
+                <box size="3 1 0.05" />
             </geometry>
             <material name="green"/>
         </visual>
@@ -26,7 +26,7 @@
         <collision>
             <origin xyz="0 0 0" />
             <geometry>
-             <box size="3 1 0.1" />
+             <box size="3 1 0.05" />
             </geometry>
         </collision>
 

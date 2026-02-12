@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 
-<robot name="rampa">
+<robot name="ramp">
 
     <material name="blue">
-        <color rgba="0 0 0.8 1" />
+        <color rgba="0 0 1 1" />
     </material>
 
     <link name="base_link">
@@ -32,7 +32,7 @@
 
     </link>
 
-    <link name="rampa_izquierda">
+    <link name="ramp_left_link">
 
         <inertial>
             <origin rpy="-0.31 0 0" xyz="0 0 0" />
@@ -45,7 +45,7 @@
         <visual>        
             <origin rpy="-0.31 0 0" xyz="0 0 0" />
             <geometry>
-                <box size="2 3.16 0" />
+                <box size="2 3.16 0.01" />
             </geometry>
             <material name="blue"/>
         </visual>
@@ -53,13 +53,13 @@
         <collision>
             <origin rpy="-0.31 0 0" xyz="0 0 0" />
             <geometry>
-             <box size="2 3.16 0" />
+             <box size="2 3.16 0.01" />
             </geometry>
         </collision>
 
     </link>
 
-    <link name="rampa_derecha">
+    <link name="ramp_right_link">
 
         <inertial>
             <origin rpy="0.31 0 0" xyz="0 0 0" />
@@ -72,7 +72,7 @@
         <visual>        
             <origin rpy="0.31 0 0" xyz="0 0 0" />
             <geometry>
-                <box size="2 3.16 0" />
+                <box size="2 3.16 0.01" />
             </geometry>
             <material name="blue"/>
         </visual>
@@ -80,24 +80,22 @@
         <collision>
             <origin rpy="0.31 0 0" xyz="0 0 0" />
             <geometry>
-             <box size="2 3.16 0" />
+             <box size="2 3.16 0.01" />
             </geometry>
         </collision>
 
     </link>
 
-    <joint name = "rampa_izquierda_joint" type = "fixed">
+    <joint name = "ramp_left_joint" type = "fixed">
         <parent link="base_link" />
-        <child link="rampa_izquierda" />
+        <child link="ramp_left_link" />
         <origin xyz="0 3.5 0" rpy="0 0 0" />
-        <axis xyz="0 0 0" />
     </joint>
 
-    <joint name = "rampa_derecha_joint" type = "fixed">
+    <joint name = "ramp_right_joint" type = "fixed">
         <parent link="base_link" />
-        <child link="rampa_derecha" />
+        <child link="ramp_right_link" />
         <origin xyz="0 -3.5 0" rpy="0 0 0" />
-        <axis xyz="0 0 0" />
     </joint>
 
 </robot>

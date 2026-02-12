@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 
-<robot name="rampa">
+<robot name="barrier">
 
-    <material name="blue">
-        <color rgba="0 0 0.8 1" />
+    <material name="red">
+        <color rgba="1 0 0 1" />
     </material>
 
-    <link name="base_link">
+    <link name="post_link">
 
         <inertial>
             <origin xyz="0 0 0" />
-            <mass value="100.0" />
+            <mass value="200" />
             <inertia ixx="1.0" ixy="0.0" ixz="0.0"
             iyy="1.0" iyz="0.0" izz="1.0" />
         </inertial>
@@ -18,86 +18,53 @@
         <visual>
             <origin xyz="0 0 0" />
             <geometry>
-                <box size="2 4 1" />
+                <cylinder radius="0.1" length="1"/>
             </geometry>
-            <material name="blue"/>
+            <material name="red"/>
         </visual>
 
         <collision>
             <origin xyz="0 0 0" />
             <geometry>
-             <box size="2 4 1" />
+                <cylinder radius="0.1" length="1"/>
             </geometry>
         </collision>
 
     </link>
 
-    <link name="rampa_izquierda">
+    <link name="barrier_link">
 
         <inertial>
-            <origin rpy="-0.31 0 0" xyz="0 0 0" />
-            <mass value="10.0" />
+            <origin rpy="0 0 -1.5708" xyz="0 0 0" />
+            <mass value="5.0" />
             <inertia ixx="1.0" ixy="0.0" ixz="0.0"
             iyy="0.0" iyz="0.0" izz="1.0" />
 
         </inertial>
 
         <visual>        
-            <origin rpy="-0.31 0 0" xyz="0 0 0" />
+            <origin rpy="0 0 -1.5708" xyz="0 0 0" />
             <geometry>
-                <box size="2 3.16 0" />
+                <box size="2 0.1 0.1" />
             </geometry>
-            <material name="blue"/>
+            <material name="red"/>
         </visual>
 
         <collision>
-            <origin rpy="-0.31 0 0" xyz="0 0 0" />
+            <origin rpy="0 0 -1.5708" xyz="0 0 0" />
             <geometry>
-             <box size="2 3.16 0" />
+             <box size="2 0.1 0.1" />
             </geometry>
         </collision>
 
     </link>
 
-    <link name="rampa_derecha">
-
-        <inertial>
-            <origin rpy="0.31 0 0" xyz="0 0 0" />
-            <mass value="10.0" />
-            <inertia ixx="1.0" ixy="0.0" ixz="0.0"
-            iyy="0.0" iyz="0.0" izz="1.0" />
-
-        </inertial>
-
-        <visual>        
-            <origin rpy="0.31 0 0" xyz="0 0 0" />
-            <geometry>
-                <box size="2 3.16 0" />
-            </geometry>
-            <material name="blue"/>
-        </visual>
-
-        <collision>
-            <origin rpy="0.31 0 0" xyz="0 0 0" />
-            <geometry>
-             <box size="2 3.16 0" />
-            </geometry>
-        </collision>
-
-    </link>
-
-    <joint name = "rampa_izquierda_joint" type = "fixed">
-        <parent link="base_link" />
-        <child link="rampa_izquierda" />
-        <origin xyz="0 3.5 0" rpy="0 0 0" />
-        <axis xyz="0 0 0" />
-    </joint>
-
-    <joint name = "rampa_derecha_joint" type = "fixed">
-        <parent link="base_link" />
-        <child link="rampa_derecha" />
-        <origin xyz="0 -3.5 0" rpy="0 0 0" />
-        <axis xyz="0 0 0" />
+    <joint name = "barrier_joint" type = "revolute">
+        <parent link="post_link" />
+        <child link="barrier_link" />
+        <origin xyz="0 0.75 -0.25" rpy="0 0 0" />
+        <axis xyz="0 0 1"/>
+        <limit lower="-3.14" upper="3.14" effort="1000" velocity="10"/>
     </joint>
 
 </robot>
