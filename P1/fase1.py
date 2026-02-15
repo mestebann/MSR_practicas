@@ -8,6 +8,7 @@ husky_urdf  = "husky/husky.urdf"
 platform_urdf = "plataforma.urdf"
 barrier_urdf = "barrera.urdf"
 
+# CONFIGURACIÓN
 physicsClient = p.connect(p.GUI)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 p.setGravity(0,0,-9.8) 
@@ -48,7 +49,7 @@ try:
         time.sleep(1./240.)
         
         # MOTORES HUSKY
-        p.setJointMotorControlArray(husky, husky_jointIndices, p.VELOCITY_CONTROL, targetVelocities = [-10, -10, -10, -10, -10, -10, -10, -10, -10, -10])
+        p.setJointMotorControlArray(husky, husky_jointIndices, p.VELOCITY_CONTROL, targetVelocities = [-10]*husky_numJoints)
         
 except KeyboardInterrupt:
     pass
