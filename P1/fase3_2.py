@@ -54,6 +54,20 @@ inicio_tiempo = time.time()
 for j in range(husky_numJoints):
     print("%d - %s" % (p.getJointInfo(husky, j)[0], p.getJointInfo(husky, j)[1].decode("utf-8")))
 
+# Identificar ruedas del husky
+wheel_indices = []
+
+for i in range(husky_numJoints):
+    joint_info = p.getJointInfo(husky, i)
+    joint_type = joint_info[2]
+    
+    # Solo joints revolute (las ruedas)
+    if joint_type == p.JOINT_REVOLUTE:
+        wheel_indices.append(i)
+
+for wheel in wheel_indices:
+    p.changeDynamics(husky, wheel, lateralFriction = 0.93, spinningFriction = 0.005, rollingFriction = 0.003)
+
 # BUCLE PRINCIPAL
 while True:
 
@@ -93,11 +107,11 @@ while True:
         break
 
 # GUARDAR CSV
-with open("resultados1.csv", "w", newline="") as f:
+with open("resultados2.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["tiempo", "posicion_y", "velocidad_y", "velocidad_media_ruedas", "fuerza_media_ruedas"])
     writer.writerows(datos)
 
 p.disconnect()
 
-print("Datos guardados en resultados1.csv")
+print("Datos guardados en resultados2.csv")

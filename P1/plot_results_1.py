@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Cargar datos
-datos = np.loadtxt("resultados.csv", delimiter = ",", skiprows = 1)
+datos = np.loadtxt("resultados1.csv", delimiter = ",", skiprows = 1)
 
 posicion_y = datos[:,1]
 velocidad_y = datos[:,2]

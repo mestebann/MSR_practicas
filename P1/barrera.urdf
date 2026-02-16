@@ -10,9 +10,10 @@
 
         <inertial>
             <origin xyz="0 0 0" />
-            <mass value="200" />
+            <mass value="20" />
             <inertia ixx="1.0" ixy="0.0" ixz="0.0"
-            iyy="1.0" iyz="0.0" izz="1.0" />
+                               iyy="1.0" iyz="0.0" 
+                                         izz="1.0" />
         </inertial>
 
         <visual>
@@ -35,36 +36,36 @@
     <link name="barrier_link">
 
         <inertial>
-            <origin rpy="0 0 -1.5708" xyz="0 0 0" />
+            <origin rpy="1.57 0 0" xyz="0 1 0" />
             <mass value="5.0" />
-            <inertia ixx="1.0" ixy="0.0" ixz="0.0"
-            iyy="0.0" iyz="0.0" izz="1.0" />
+            <inertia ixx="6.66" ixy="0.0" ixz="0.0"
+                               iyy="0.0" iyz="0.0" 
+                                         izz="6.66" />
 
         </inertial>
 
         <visual>        
-            <origin rpy="0 0 -1.5708" xyz="0 0 0" />
+            <origin rpy="1.57 0 0" xyz="0 1 0" />
             <geometry>
-                <box size="2 0.1 0.1" />
+                <cylinder radius="0.1" length="2"/>
             </geometry>
             <material name="red"/>
         </visual>
 
         <collision>
-            <origin rpy="0 0 -1.5708" xyz="0 0 0" />
+            <origin rpy="1.57 0 0" xyz="0 1 0" />
             <geometry>
-             <box size="2 0.1 0.1" />
+             <cylinder radius="0.1" length="2"/>
             </geometry>
         </collision>
 
     </link>
 
-    <joint name = "barrier_joint" type = "revolute">
+    <joint name = "barrier_joint" type = "continuous">
         <parent link="post_link" />
         <child link="barrier_link" />
-        <origin xyz="0 0.75 -0.25" rpy="0 0 0" />
+        <origin xyz="0 0 -0.25" rpy="0 0 0" />
         <axis xyz="0 0 1"/>
-        <limit lower="-3.14" upper="3.14" effort="1000" velocity="10"/>
     </joint>
 
 </robot>

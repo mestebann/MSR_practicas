@@ -19,7 +19,7 @@ planeId = p.loadURDF("plane.urdf")
 
 # CONFIGURACION HUSKY
 husky_startPosition = [0,0,1]
-husky_euler_angles = [0,0,-1.57]
+husky_euler_angles = [0,0,1.57]
 husky_startOrientation = p.getQuaternionFromEuler(husky_euler_angles)
 husky = p.loadURDF(husky_urdf, husky_startPosition, husky_startOrientation)
 
@@ -30,10 +30,10 @@ ramp_startOrientation = p.getQuaternionFromEuler(ramp_euler_angles)
 ramp = p.loadURDF(ramp_urdf, ramp_startPosition, ramp_startOrientation)
 
 #CONFIGURACION BARRERA
-barrier_startPosition = [-1.5,17,1]
+barrier_startPosition = [-1.5,17,0.5]
 barrier_euler_angles = [0,0,-1.5708]
 barrier_startOrientation = p.getQuaternionFromEuler(barrier_euler_angles)
-barrier = p.loadURDF(barrier_urdf, barrier_startPosition, barrier_startOrientation)
+barrier = p.loadURDF(barrier_urdf, barrier_startPosition, barrier_startOrientation, useFixedBase = True)
 
 # CONFIGURACION PLATAFORMA
 platform_startPosition = [0,20,1]
@@ -54,7 +54,7 @@ inicio_tiempo = time.time()
 while True:
 
     # MOTORES HUSKY
-    p.setJointMotorControlArray(husky, husky_jointIndices, p.VELOCITY_CONTROL, targetVelocities = [-10]*husky_numJoints)
+    p.setJointMotorControlArray(husky, husky_jointIndices, p.VELOCITY_CONTROL, targetVelocities = [10]*husky_numJoints)
 
     # Obtener posición y velocidad base
     pos, orn = p.getBasePositionAndOrientation(husky)
