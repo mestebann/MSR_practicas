@@ -77,7 +77,7 @@ for i in range(barrier_numJoints):
     print("%d - %s" % (p.getJointInfo(barrier, i)[0], p.getJointInfo(barrier, i)[1].decode("utf-8")))
 
 # INERCIA DE LA BARRERA
-p.changeDynamics(barrier, 1, mass = 5, localInertiaDiagonal = [6.66, 0.0, 6.66])
+p.changeDynamics(barrier, 0, mass = 5, localInertiaDiagonal = [6.66, 0.0, 6.66])
 
 # BUCLE PRINCIPAL
 while True:
