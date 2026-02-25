@@ -2,6 +2,7 @@ import pybullet as p
 import pybullet_data
 import time
 import csv
+import numpy as np
 
 # FICHEROS URDF
 ramp_urdf = "rampa.urdf"
@@ -18,7 +19,7 @@ p.setRealTimeSimulation(1)
 planeId = p.loadURDF("plane.urdf")
 
 # CONFIGURACION HUSKY
-husky_startPosition = [0,0,1]
+husky_startPosition = [0,0,0.5]
 husky_euler_angles = [0,0,1.57]
 husky_startOrientation = p.getQuaternionFromEuler(husky_euler_angles)
 husky = p.loadURDF(husky_urdf, husky_startPosition, husky_startOrientation)
@@ -30,8 +31,8 @@ ramp_startOrientation = p.getQuaternionFromEuler(ramp_euler_angles)
 ramp = p.loadURDF(ramp_urdf, ramp_startPosition, ramp_startOrientation)
 
 #CONFIGURACION BARRERA
-barrier_startPosition = [-1.5,17,0.5]
-barrier_euler_angles = [0,0,-1.5708]
+barrier_startPosition = [-1.5,17,0]
+barrier_euler_angles = [0,0,0]
 barrier_startOrientation = p.getQuaternionFromEuler(barrier_euler_angles)
 barrier = p.loadURDF(barrier_urdf, barrier_startPosition, barrier_startOrientation, useFixedBase = True)
 
@@ -70,20 +71,21 @@ for i in range(husky_numJoints):
 for wheel in wheel_indices:
     p.changeDynamics(husky, wheel, lateralFriction = 0.93, spinningFriction = 0.005, rollingFriction = 0.003)
 
-# INFO JOINTS BARRERA
+# JOINTS BARRERA
 barrier_numJoints = p.getNumJoints(barrier)
-print("\nInfo de joints de la barrera:")
-for i in range(barrier_numJoints):
-    print("%d - %s" % (p.getJointInfo(barrier, i)[0], p.getJointInfo(barrier, i)[1].decode("utf-8")))
 
 # INERCIA DE LA BARRERA
-p.changeDynamics(barrier, 0, mass = 5, localInertiaDiagonal = [6.66, 0.0, 6.66])
+p.changeDynamics(barrier, 0, mass = 5, localInertiaDiagonal = [0.008, 6.75, 6.75])
+
+# CONTROLADOR
+radioWheel = 0.17775
+velDeseada = 2.0
+angular_ruedas = velDeseada / radioWheel
+Kp = 1.2
+torque = 35
 
 # BUCLE PRINCIPAL
 while True:
-
-    # MOTORES HUSKY
-    p.setJointMotorControlArray(husky, husky_jointIndices, p.VELOCITY_CONTROL, targetVelocities = [13] * husky_numJoints, forces = [25] * husky_numJoints)
 
     # Obtener posición y velocidad base
     pos, orn = p.getBasePositionAndOrientation(husky)
@@ -91,6 +93,28 @@ while True:
 
     y_actual = pos[1]
     velocidad_y = vel_lin[1]
+
+    # CONTROLADOR SEGUN INCLINACION
+    pitch = p.getEulerFromQuaternion(orn)[1]
+
+    error = velDeseada - vel_lin[1]
+    correccion_angular = (Kp * error) / radioWheel
+
+    vel = angular_ruedas + correccion_angular
+
+    back = vel
+    front = vel
+
+    if pitch < -0.1: # Subiendo
+        front *= 1.5
+        back *= 0.8
+        torque = 90
+    elif pitch > 0.05: # Bajando
+        front *= 0.7
+        back *= 0.65
+        torque = 90
+
+    p.setJointMotorControlArray(husky, wheel_indices, p.VELOCITY_CONTROL, targetVelocities=[back, back, front, front], forces=[torque]*4)
 
     # Inicializar posición en y
     if y_anterior is None:
@@ -118,11 +142,11 @@ while True:
         break
 
 # GUARDAR CSV
-with open("resultados3.csv", "w", newline="") as f:
+with open("Fase4.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["tiempo", "posicion_y", "velocidad_y", "velocidad_media_ruedas", "fuerza_media_ruedas"])
     writer.writerows(datos)
 
 p.disconnect()
 
-print("Datos guardados en resultados3.csv")
+print("Datos guardados en Fase4.csv")

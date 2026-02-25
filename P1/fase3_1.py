@@ -30,8 +30,8 @@ ramp_startOrientation = p.getQuaternionFromEuler(ramp_euler_angles)
 ramp = p.loadURDF(ramp_urdf, ramp_startPosition, ramp_startOrientation)
 
 #CONFIGURACION BARRERA
-barrier_startPosition = [-1.5,17,0.5]
-barrier_euler_angles = [0,0,-1.5708]
+barrier_startPosition = [-1.5,17,0]
+barrier_euler_angles = [0,0,0]
 barrier_startOrientation = p.getQuaternionFromEuler(barrier_euler_angles)
 barrier = p.loadURDF(barrier_urdf, barrier_startPosition, barrier_startOrientation, useFixedBase = True)
 
@@ -58,7 +58,7 @@ for j in range(husky_numJoints):
 while True:
 
     # MOTORES HUSKY
-    p.setJointMotorControlArray(husky, husky_jointIndices, p.VELOCITY_CONTROL, targetVelocities = [13] * husky_numJoints, forces = [25] * husky_numJoints)
+    p.setJointMotorControlArray(husky, husky_jointIndices, p.VELOCITY_CONTROL, targetVelocities = [15] * husky_numJoints, forces = [25] * husky_numJoints)
 
     # Obtener posición y velocidad base
     pos, orn = p.getBasePositionAndOrientation(husky)

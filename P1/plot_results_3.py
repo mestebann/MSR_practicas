@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 # Cargar datos
 datos1 = np.loadtxt("resultados1.csv", delimiter = ",", skiprows = 1)
 datos2 = np.loadtxt("resultados2.csv", delimiter = ",", skiprows = 1)
-datos3 = np.loadtxt("resultados3.csv", delimiter = ",", skiprows = 1)
+datos3 = np.loadtxt("Fase3.csv", delimiter = ",", skiprows = 1)
 
 posicion_y_1 = datos1[:,1]
 velocidad_y_1 = datos1[:,2]
@@ -23,7 +23,7 @@ plt.plot(posicion_y_3, velocidad_y_3, label = "With friction and inertial")
 
 plt.xlabel("Posición Y (m)")
 plt.ylabel("Velocidad Y (m/s)")
-plt.title("Velocidad del robot en función de la posición")
+plt.title("Gráfica Escenarios 3.1 + 3.2 + 3.3")
 
 plt.grid(True)
 plt.legend()

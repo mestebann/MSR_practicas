@@ -18,7 +18,7 @@ p.setRealTimeSimulation(1)
 planeId = p.loadURDF("plane.urdf")
 
 # CONFIGURACION HUSKY
-husky_startPosition = [0,0,1]
+husky_startPosition = [0,0,0.5]
 husky_euler_angles = [0,0,1.57]
 husky_startOrientation = p.getQuaternionFromEuler(husky_euler_angles)
 husky = p.loadURDF(husky_urdf, husky_startPosition, husky_startOrientation)
@@ -50,11 +50,37 @@ datos = []
 y_anterior = None
 inicio_tiempo = time.time()
 
+# INFO JOINTS HUSKY
+print("\nInfo de joints del husky:")
+for j in range(husky_numJoints):
+    print("%d - %s" % (p.getJointInfo(husky, j)[0], p.getJointInfo(husky, j)[1].decode("utf-8")))
+
+# Identificar ruedas del husky
+wheel_indices = []
+
+for i in range(husky_numJoints):
+    joint_info = p.getJointInfo(husky, i)
+    joint_type = joint_info[2]
+    
+    # Solo joints revolute (las ruedas)
+    if joint_type == p.JOINT_REVOLUTE:
+        wheel_indices.append(i)
+
+# FRICCIONES DEL HUSKY
+for wheel in wheel_indices:
+    p.changeDynamics(husky, wheel, lateralFriction = 0.93, spinningFriction = 0.005, rollingFriction = 0.003)
+
+# JOINTS BARRERA
+barrier_numJoints = p.getNumJoints(barrier)
+
+# INERCIA DE LA BARRERA
+p.changeDynamics(barrier, 0, localInertiaDiagonal = [0.008, 6.75, 6.75])
+
 # BUCLE PRINCIPAL
 while True:
 
     # MOTORES HUSKY
-    p.setJointMotorControlArray(husky, husky_jointIndices, p.VELOCITY_CONTROL, targetVelocities = [10]*husky_numJoints)
+    p.setJointMotorControlArray(husky, husky_jointIndices, p.VELOCITY_CONTROL, targetVelocities = [15] * husky_numJoints, forces = [25] * husky_numJoints)
 
     # Obtener posición y velocidad base
     pos, orn = p.getBasePositionAndOrientation(husky)
@@ -89,11 +115,11 @@ while True:
         break
 
 # GUARDAR CSV
-with open("resultados.csv", "w", newline="") as f:
+with open("Fase3.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["tiempo", "posicion_y", "velocidad_y", "velocidad_media_ruedas", "fuerza_media_ruedas"])
     writer.writerows(datos)
 
 p.disconnect()
 
-print("Datos guardados en resultados.csv")
+print("Datos guardados en Fase3.csv")
