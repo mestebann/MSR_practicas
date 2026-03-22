@@ -1,0 +1,108 @@
+<robot name="rover" version="1.0">
+  <joint name="back_left_wheel_link_joint" type="continuous">
+    <limit effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 -1.57080 0.00000" xyz="-1.10000 -1.70000 -1.05020"/>
+    <parent link="chasis_link"/>
+    <child link="back_left_wheel_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="back_right_wheel_link_joint" type="continuous">
+    <limit effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 -1.57080 0.00000" xyz="1.10000 -1.70000 -1.05020"/>
+    <parent link="chasis_link"/>
+    <child link="back_right_wheel_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="front_left_wheel_joint" type="continuous">
+    <limit effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 -1.57080 0.00000" xyz="-1.10000 1.70000 -1.05020"/>
+    <parent link="chasis_link"/>
+    <child link="front_left_wheel_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="front_right_wheel_link_joint" type="continuous">
+    <limit effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 -1.57080 0.00000" xyz="1.10000 1.70000 -1.05020"/>
+    <parent link="chasis_link"/>
+    <child link="front_right_wheel_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <link name="chasis_link">
+    <collision name="Chasis_collision">
+      <origin rpy="-0.00000 1.57080 0.00000" xyz="-0.00000 0.00000 -0.00002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Cylinder.007.dae" scale="0.10000 0.10000 0.25000"/>
+      </geometry>
+    </collision>
+    <visual name="Chasis">
+      <material name="Material"/>
+      <origin rpy="-0.00000 1.57080 0.00000" xyz="-0.00000 0.00000 -0.00002"/>
+      <geometry>
+        <box size="1.45000 3.60000 2.30000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="back_left_wheel_link">
+    <collision name="back_left_wheel_collision">
+      <origin rpy="3.14159 -0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Torus.002.dae" scale="0.40000 0.40000 0.90000"/>
+      </geometry>
+    </collision>
+    <visual name="back_left_wheel">
+      <material name="None"/>
+      <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Torus.002.dae" scale="0.40000 0.40000 0.90000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="back_right_wheel_link">
+    <collision name="back_right_wheel_collision">
+      <origin rpy="3.14159 -0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Torus.003.dae" scale="0.40000 0.40000 0.90000"/>
+      </geometry>
+    </collision>
+    <visual name="back_right_wheel">
+      <material name="None"/>
+      <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Torus.003.dae" scale="0.40000 0.40000 0.90000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="front_left_wheel_link">
+    <collision name="front_left_wheel_collision">
+      <origin rpy="3.14159 -0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Torus.004.dae" scale="0.40000 0.40000 0.90000"/>
+      </geometry>
+    </collision>
+    <visual name="front_left_wheel">
+      <material name="None"/>
+      <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Torus.004.dae" scale="0.40000 0.40000 0.90000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="front_right_wheel_link">
+    <collision name="front_right_wheel_collision">
+      <origin rpy="3.14159 -0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Torus.001.dae" scale="0.40000 0.40000 0.90000"/>
+      </geometry>
+    </collision>
+    <visual name="front_right_wheel">
+      <material name="None"/>
+      <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Torus.001.dae" scale="0.40000 0.40000 0.90000"/>
+      </geometry>
+    </visual>
+  </link>
+  <material name="Material">
+    <color rgba="0.80000 0.80000 0.80000 1.00000"/>
+  </material>
+</robot>
