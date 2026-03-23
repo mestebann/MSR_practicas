@@ -1,44 +1,49 @@
 <robot name="rover" version="1.0">
   <joint name="back_left_wheel_link_joint" type="continuous">
     <limit effort="0.00000" velocity="0.00000"/>
-    <origin rpy="0.00000 -1.57080 0.00000" xyz="-1.10000 -1.70000 -1.05020"/>
-    <parent link="chasis_link"/>
+    <origin rpy="0.00000 -1.57080 0.00000" xyz="-1.10001 -1.66133 -1.08908"/>
+    <parent link="Chasis_link"/>
     <child link="back_left_wheel_link"/>
     <axis xyz="0.00000 0.00000 1.00000"/>
   </joint>
   <joint name="back_right_wheel_link_joint" type="continuous">
     <limit effort="0.00000" velocity="0.00000"/>
-    <origin rpy="0.00000 -1.57080 0.00000" xyz="1.10000 -1.70000 -1.05020"/>
-    <parent link="chasis_link"/>
+    <origin rpy="0.00000 -1.57080 0.00000" xyz="1.09999 -1.66133 -1.08908"/>
+    <parent link="Chasis_link"/>
     <child link="back_right_wheel_link"/>
     <axis xyz="0.00000 0.00000 1.00000"/>
   </joint>
-  <joint name="front_left_wheel_joint" type="continuous">
+  <joint name="front_left_wheel_link_joint" type="continuous">
     <limit effort="0.00000" velocity="0.00000"/>
-    <origin rpy="0.00000 -1.57080 0.00000" xyz="-1.10000 1.70000 -1.05020"/>
-    <parent link="chasis_link"/>
+    <origin rpy="0.00000 -1.57080 0.00000" xyz="-1.10001 1.73867 -1.08908"/>
+    <parent link="Chasis_link"/>
     <child link="front_left_wheel_link"/>
     <axis xyz="0.00000 0.00000 1.00000"/>
   </joint>
   <joint name="front_right_wheel_link_joint" type="continuous">
     <limit effort="0.00000" velocity="0.00000"/>
-    <origin rpy="0.00000 -1.57080 0.00000" xyz="1.10000 1.70000 -1.05020"/>
-    <parent link="chasis_link"/>
+    <origin rpy="0.00000 -1.57080 0.00000" xyz="1.09999 1.73867 -1.08908"/>
+    <parent link="Chasis_link"/>
     <child link="front_right_wheel_link"/>
     <axis xyz="0.00000 0.00000 1.00000"/>
   </joint>
-  <link name="chasis_link">
+  <link name="Chasis_link">
     <collision name="Chasis_collision">
-      <origin rpy="-0.00000 1.57080 0.00000" xyz="-0.00000 0.00000 -0.00002"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00002"/>
       <geometry>
-        <mesh filename="../meshes/dae/Cylinder.007.dae" scale="0.10000 0.10000 0.25000"/>
+        <mesh filename="../meshes/dae/Cylinder.001.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </collision>
+    <inertial>
+      <inertia ixx="18.28922" ixy="0.00525" ixz="-0.00459" iyy="8.71801" iyz="3.79243" izz="17.32324"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <mass value="12.00000"/>
+    </inertial>
     <visual name="Chasis">
       <material name="Material"/>
-      <origin rpy="-0.00000 1.57080 0.00000" xyz="-0.00000 0.00000 -0.00002"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
       <geometry>
-        <box size="1.45000 3.60000 2.30000"/>
+        <mesh filename="../meshes/dae/Cylinder.001.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </visual>
   </link>
@@ -49,6 +54,11 @@
         <mesh filename="../meshes/dae/Torus.002.dae" scale="0.40000 0.40000 0.90000"/>
       </geometry>
     </collision>
+    <inertial>
+      <inertia ixx="0.23459" ixy="0.00000" ixz="0.00000" iyy="0.13723" iyz="-0.00000" izz="0.13723"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <mass value="2.00000"/>
+    </inertial>
     <visual name="back_left_wheel">
       <material name="None"/>
       <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
@@ -64,6 +74,11 @@
         <mesh filename="../meshes/dae/Torus.003.dae" scale="0.40000 0.40000 0.90000"/>
       </geometry>
     </collision>
+    <inertial>
+      <inertia ixx="0.23459" ixy="0.00000" ixz="0.00000" iyy="0.13723" iyz="-0.00000" izz="0.13723"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="2.00000"/>
+    </inertial>
     <visual name="back_right_wheel">
       <material name="None"/>
       <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
@@ -79,6 +94,11 @@
         <mesh filename="../meshes/dae/Torus.004.dae" scale="0.40000 0.40000 0.90000"/>
       </geometry>
     </collision>
+    <inertial>
+      <inertia ixx="0.23459" ixy="0.00000" ixz="0.00000" iyy="0.13723" iyz="-0.00000" izz="0.13723"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <mass value="2.00000"/>
+    </inertial>
     <visual name="front_left_wheel">
       <material name="None"/>
       <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>
@@ -94,6 +114,11 @@
         <mesh filename="../meshes/dae/Torus.001.dae" scale="0.40000 0.40000 0.90000"/>
       </geometry>
     </collision>
+    <inertial>
+      <inertia ixx="0.23459" ixy="0.00000" ixz="0.00000" iyy="0.13723" iyz="-0.00000" izz="0.13723"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="2.00000"/>
+    </inertial>
     <visual name="front_right_wheel">
       <material name="None"/>
       <origin rpy="3.14159 0.00000 3.14159" xyz="0.00000 0.00000 0.00000"/>

@@ -10,7 +10,7 @@ p.setGravity(0,0,-9.8)
 
 planeId = p.loadURDF("plane.urdf")
 
-startPos = [0, 0, 10]
+startPos = [0, 0, 2]
 euler_angles = [0, 0, 0]
 startOrientation = p.getQuaternionFromEuler(euler_angles)
 
