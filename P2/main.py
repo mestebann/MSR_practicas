@@ -188,7 +188,8 @@ np.savetxt(
     registro[:num_reg],
     delimiter=",",
     fmt="%.3f",
-    header="tiempo(s),Numero_joints,G-parcial(N)"
+    header="tiempo(s),Numero_joints,G-parcial(N)",
+    comments=""
 )
 print(f"Archivo Gparcial.csv guardado con {num_reg} muestras.")
 
