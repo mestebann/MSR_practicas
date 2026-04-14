@@ -1,0 +1,23 @@
+JUSTIFICACIÓN PLOT:
+
+El gráfico muestra la evolución del gasto energético G-parcial (suma de torques absolutos de los 7 joints del mecanismo pick & place) a lo largo del tiempo de simulación.
+
+De t=0 a t=4s el robot conduce hacia el cubo. Durante esta fase G-parcial es 0 porque la medición solo comienza cuando el mecanismo inicia el pick.
+
+De t=4s a t=7s el brazo baja hacia el cubo. Se producen los picos más altos de la gráfica (hasta ~1050N) debido a la aceleración inicial de los joints al partir desde reposo y los esfuerzos necesarios para vencer la inercia del brazo mientras la IK resuelve la trayectoria de bajada.
+
+De t=7s a t=11s el brazo transporta el cubo al compartimento. La fuerza se estabiliza en torno a ~670N, que corresponde al esfuerzo sostenido necesario para mantener la posición del brazo extendido con el peso del cubo (4kg) sujeto por el gripper.
+
+De t=11s a t=12s se abre el gripper y se suelta el cubo. Se aprecia una caída brusca de la fuerza al reducirse la carga sobre el brazo.
+
+De t=12s a t=17.5s el brazo vuelve a la posición de reposo (todos los joints a 0). La fuerza decae progresivamente hasta valores cercanos a 0 conforme los joints alcanzan su posición objetivo.
+
+Valores obtenidos:
+
+- G-Total = 501021.137 N - suma acumulada de todos los G-parciales durante el recorrido completo.
+- Desviación estándar = 334.390 N - refleja la alta variabilidad de fuerzas entre la fase dinámica de pick (picos altos) y la fase de reposo (valores bajos).
+
+Comentarios adicionales sobre la práctica:
+
+El modelo del rover fue diseñado en Blender con un manipulador de tipo SCARA (joints 0-4) y un gripper de dos dedos (joints 5-6). La cinemática inversa se implementó mediante calculateInverseKinematics de PyBullet con targetOrientation para estabilizar la solución. El paso de simulación se configuró a 0.005s sin setRealTimeSimulation, cumpliendo los requisitos del enunciado. El muestreo de G-parcial se realiza cada 0.01s desde el inicio del pick hasta que el brazo vuelve a su posición de origen.
+

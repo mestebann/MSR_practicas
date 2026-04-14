@@ -2,6 +2,7 @@ import pybullet as p
 import pybullet_data
 import time
 import numpy as np
+import matplotlib.pyplot as plt
 
 # ================ CONFIGURACIÓN ========================================
 
@@ -31,22 +32,22 @@ RUEDAS      = [8, 9, 10, 11]
 GRIPPERS    = [5, 6]
 BRAZO       = [0, 1, 2, 3, 4]
 IK_JOINTS   = [0, 1, 2, 3, 4, 5, 6]
-NUM_IK      = len(IK_JOINTS)
+NUM_IK      = len(IK_JOINTS) # joints del brazo + gripper para la IK
 END_EFFECTOR = 4   # end-effector: Brazo5_link
 
 
 # ============ PARÁMETROS DE CONTROL ====================================
  
-AVANCE          = [5, 5, 5, 5]
-PARADO          = [0, 0, 0, 0]
+AVANCE          = [5, 5, 5, 5] # velocidad de avance en ruedas (rad/s)
+PARADO          = [0, 0, 0, 0] # velocidad de ruedas para detenerse
 DIST_FRENADO    = 3.25   # metros antes del cubo donde frena
 STEP_SIM        = 0.005  # segundos por paso de simulación
 MUESTREO_CSV    = 0.01   # segundos entre muestras de G-parcial
-MAX_MUESTRAS    = 3000
+MAX_MUESTRAS    = 3000   # máximo de muestras a guardar en el CSV
 
 # Orientaciones para la IK
-ori_pick    = p.getQuaternionFromEuler([0, 0, 0])
-ori_place   = p.getQuaternionFromEuler([0, 0, 0])
+ori_pick    = p.getQuaternionFromEuler([0, 0, 0]) # orientación para agarrar el cubo (end-effector paralelo al suelo)
+ori_place   = p.getQuaternionFromEuler([0, 0, 0]) # orientación para depositar el cubo (end-effector paralelo al suelo, mismo que para agarrar)
 
 # Waypoints del manipulador
 wp_pick     = [POS_CUBO[0],       POS_CUBO[1],        0.3  ]
@@ -60,13 +61,13 @@ ik_encendida    = False
 dedo            = 0       # 0 = abierto, 0.4 = cerrado
 objetivo_ik     = wp_pick
 ori_ik          = ori_pick
-ganancia_vel    = 1
+ganancia_vel    = 1  
 
 t_agarre        = 0
 t_deposito      = 0
 t_fin           = 0
 
-registro        = np.zeros((MAX_MUESTRAS, 3))
+registro        = np.zeros((MAX_MUESTRAS, 9))  # tiempo + 7 joints + G-parcial
 num_reg         = 0
 t0              = time.time()
 t_ultimo_reg    = 0
@@ -95,7 +96,7 @@ try:
 
         elif secuencia == 2:
             # Bajar el brazo hasta la altura del cubo
-            z_end_effector = p.getLinkState(rover, END_EFFECTOR)[0][2]
+            z_end_effector = p.getLinkState(rover, END_EFFECTOR)[0][2] # altura actual del end-effector
             if z_end_effector < 1.0:
                 secuencia   = 3
                 t_agarre    = ahora
@@ -169,12 +170,20 @@ try:
         # === REGISTRO G-PARCIAL ====================================
 
         if (ahora - t_ultimo_reg) >= MUESTREO_CSV and num_reg < MAX_MUESTRAS:
+            
+            fuerzas = []
             g = 0.0
-            if t_agarre > 0:
-                for jnt in IK_JOINTS:
-                    g += abs(p.getJointState(rover, jnt)[3])
+            
+            for jnt in IK_JOINTS:
+                if t_agarre > 0:
+                    torque = abs(p.getJointState(rover, jnt)[3])  # torque actual
+                else:
+                    torque = 0.0
 
-            registro[num_reg] = [ahora - t0, NUM_IK, g]
+                fuerzas.append(torque) # guardamos el torque de cada joint
+                g += torque       # g-parcial es la suma de los torques de los joints del brazo (0-6)
+
+            registro[num_reg] = [ahora - t0] + fuerzas + [g]
             t_ultimo_reg = ahora
             num_reg += 1
 
@@ -183,14 +192,39 @@ except KeyboardInterrupt:
 
 # ==== EXPORTAR CSV =================================================
 
+# Cabecera: tiempo + una columna por joint + G_parcial
+nombres_joints = [f"F_joint{j}" for j in IK_JOINTS]
+
 np.savetxt(
-    "./Gparcial.csv",
+    "./Fase3_Mario_Esteban.csv",
     registro[:num_reg],
     delimiter=",",
     fmt="%.3f",
-    header="tiempo(s),Numero_joints,G-parcial(N)",
+    header="tiempo(s)," + ",".join(nombres_joints) + ",G-parcial(N)",
     comments=""
 )
-print(f"Archivo Gparcial.csv guardado con {num_reg} muestras.")
+print(f"Archivo Fase3_Mario_Esteban.csv guardado con {num_reg} muestras.")
 
 p.disconnect()
+
+datos = np.loadtxt("./Fase3_Mario_Esteban.csv", delimiter=",", skiprows=1)
+
+tiempo = datos[:, 0]
+g_parcial = datos[:, -1]
+
+g_total = np.sum(g_parcial)
+desviacion_estandar = np.std(g_parcial)
+
+# Graficar
+plt.figure()
+plt.plot(tiempo, g_parcial)
+
+plt.xlabel("Tiempo (s)")
+plt.ylabel("Fuerza total brazo (N)")
+
+# G-Total y desviación estándar en el título, como exige el enunciado
+plt.title(f"Tiempo vs G-parcial  |  G-Total = {g_total:.3f} N  |  Std = {desviacion_estandar:.3f} N")
+
+
+plt.grid(True)
+plt.show()
