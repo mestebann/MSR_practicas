@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find rover_description)/urdf/sensors/imu_sensor.urdf.xacro"/>
+    <xacro:include filename="$(find rover_description)/urdf/sensors/camera.urdf.xacro"/>
+
+    <xacro:macro name="rover_sensors" params="prefix">
+
+        <!-- IMU centrada en la base -->
+        <xacro:imu_sensor
+            prefix="${prefix}base_"
+            parent="${prefix}base_link"
+            topic="/${prefix}imu">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:imu_sensor>
+
+        <!-- Cámara frontal -->
+        <xacro:camera_sensor
+            prefix="${prefix}front_camera_"
+            parent="${prefix}Chasis_link"
+            horizontal_fov="90"
+            video_width="640"
+            video_height="480">
+            <origin xyz="0 1.55 0.35" rpy="0 0 0"/>
+        </xacro:camera_sensor>
+
+        <!-- Cámara en el efector final -->
+        <xacro:camera_sensor
+            prefix="${prefix}arm_camera_"
+            parent="${prefix}Brazo5_link"
+            horizontal_fov="90"
+            video_width="640"
+            video_height="480">
+            <origin xyz="0 0 0.15" rpy="0 0 0"/>
+        </xacro:camera_sensor>
+
+    </xacro:macro>
+
+</robot>

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<robot name="rover" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- includes -->
+    <xacro:include filename="$(find rover_description)/urdf/base/rover_base.urdf.xacro"/>
+    <xacro:include filename="$(find rover_description)/urdf/wheels/rover_wheel.urdf.xacro"/>
+    <xacro:include filename="$(find rover_description)/urdf/arm/scara.urdf.xacro"/>
+    <xacro:include filename="$(find rover_description)/urdf/arm/gripper.urdf.xacro"/>
+    <xacro:include filename="$(find rover_description)/urdf/utils/materials.urdf.xacro"/>
+    <xacro:include filename="$(find rover_description)/urdf/sensors/sensors.urdf.xacro"/>
+
+    <!-- Propiedades -->
+    <xacro:property name="PI" value="3.1415926535897931"/>
+
+    <!-- argumentos -->
+    <xacro:arg name="prefix" default=""/>
+    <xacro:arg name="robot_ns" default=""/>
+
+    <!-- Base -->
+    <xacro:rover_base prefix="$(arg prefix)"/>
+
+    <!-- Wheels -->
+
+    <!-- Left side: eje Z hacia fuera -->
+    <xacro:rover_wheel
+        prefix="$(arg prefix)front_left_"
+        parent="$(arg prefix)Chasis_link"
+        mesh_file="package://rover_description/meshes/dae/Cube.008.dae"
+        material_name="Material.001"
+        joint_xyz="-0.70000 1.47578 -0.74325"
+        joint_rpy="1.57080 0 -1.57080"
+        mesh_rpy="0 1.57080 0.78540"/>
+
+    <xacro:rover_wheel
+        prefix="$(arg prefix)back_left_"
+        parent="$(arg prefix)Chasis_link"
+        mesh_file="package://rover_description/meshes/dae/Cube.011.dae"
+        material_name="Material.003"
+        joint_xyz="-0.70000 -1.18422 -0.74325"
+        joint_rpy="1.57080 0 -1.57080"
+        mesh_rpy="0 1.57080 0.78540"/>
+
+    <!-- Right side: eje Z hacia fuera -->
+    <xacro:rover_wheel
+        prefix="$(arg prefix)front_right_"
+        parent="$(arg prefix)Chasis_link"
+        mesh_file="package://rover_description/meshes/dae/Cube.012.dae"
+        material_name="Material"
+        joint_xyz="0.70000 1.47578 -0.74325"
+        joint_rpy="1.57080 0 1.57080"
+        mesh_rpy="0 -1.57080 -0.78540"/>
+
+    <xacro:rover_wheel
+        prefix="$(arg prefix)back_right_"
+        parent="$(arg prefix)Chasis_link"
+        mesh_file="package://rover_description/meshes/dae/Cube.013.dae"
+        material_name="Material.002"
+        joint_xyz="0.70000 -1.18422 -0.74325"
+        joint_rpy="1.57080 0 1.57080"
+        mesh_rpy="0 -1.57080 -0.78540"/>
+
+    <!-- Arm -->
+    <xacro:scara parent="$(arg prefix)Chasis_link" prefix="$(arg prefix)">
+        <origin xyz="0.00000 1.05323 1.69829" rpy="0 0 1.57080"/>
+    </xacro:scara>
+
+    <!-- Gripper -->
+    <xacro:gripper parent="$(arg prefix)Brazo5_link" prefix="$(arg prefix)"/>
+
+    <!-- Sensors -->
+    <xacro:rover_sensors prefix="$(arg prefix)"/>
+
+</robot>

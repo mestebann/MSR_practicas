@@ -1,0 +1,3 @@
+Instantiated with filepath=None->None, scale=[0.5372780561447144, 0.20000000298023224, 1.0], mesh=<bpy_struct, Mesh("Cube.032") at 0x7fa8b9854520>, meshname=Cube.032, material=None, mesh_orientation=None
+->trying export of <bpy_struct, Mesh("Cube.032") at 0x7fa8b9854520> to /home/mario/MODELADO/Practicas/MSR_practicas/P2/rover/meshes/dae/Cube.032.dae
+->wrote dae to /home/mario/MODELADO/Practicas/MSR_practicas/P2/rover/meshes/dae/Cube.032.dae from bpy_types.Mesh

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <material name="Material">
+        <color rgba="0.42353 0.42353 0.42353 1.00000"/>
+    </material>
+
+    <material name="Material.001">
+        <color rgba="0.42353 0.42353 0.42353 1.00000"/>
+    </material>
+
+    <material name="Material.002">
+        <color rgba="0.42353 0.42353 0.42353 1.00000"/>
+    </material>
+
+    <material name="Material.003">
+        <color rgba="0.42353 0.42353 0.42353 1.00000"/>
+    </material>
+
+    <material name="Material.004">
+        <color rgba="0.00000 0.00000 0.00000 1.00000"/>
+    </material>
+
+    <material name="Material.007">
+        <color rgba="0.79608 0.00784 0.00000 1.00000"/>
+    </material>
+
+    <material name="Material.010">
+        <color rgba="0.80000 0.00000 0.00000 1.00000"/>
+    </material>
+
+    <material name="Material.011">
+        <color rgba="0.00000 0.00000 0.00000 1.00000"/>
+    </material>
+
+    <material name="Material.012">
+        <color rgba="0.00000 0.00000 0.00000 1.00000"/>
+    </material>
+
+    <material name="Material.013">
+        <color rgba="0.00000 0.00000 0.00000 1.00000"/>
+    </material>
+
+    <material name="Material.014">
+        <color rgba="0.00000 0.80000 0.00000 1.00000"/>
+    </material>
+
+    <material name="Material.015">
+        <color rgba="0.00000 0.80000 0.00000 1.00000"/>
+    </material>
+
+    <material name="Material.016">
+        <color rgba="0.80000 0.00000 0.00000 1.00000"/>
+    </material>
+
+    <material name="Material.017">
+        <color rgba="0.80000 0.00000 0.00000 1.00000"/>
+    </material>
+
+    <material name="Material.018">
+        <color rgba="0.80000 0.00000 0.00000 1.00000"/>
+    </material>
+
+    <material name="Material.019">
+        <color rgba="0.80000 0.00000 0.00000 1.00000"/>
+    </material>
+
+</robot>

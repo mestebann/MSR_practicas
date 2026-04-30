@@ -1,0 +1,115 @@
+[0.010s] Invoking command in '/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mario/MODELADO/Practicas/MSR_practicas/P3/src/rover_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description
+[0.075s] -- The C compiler identification is GNU 13.3.0
+[0.122s] -- The CXX compiler identification is GNU 13.3.0
+[0.139s] -- Detecting C compiler ABI info
+[0.284s] -- Detecting C compiler ABI info - done
+[0.290s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.290s] -- Detecting C compile features
+[0.290s] -- Detecting C compile features - done
+[0.298s] -- Detecting CXX compiler ABI info
+[0.425s] -- Detecting CXX compiler ABI info - done
+[0.431s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.432s] -- Detecting CXX compile features
+[0.432s] -- Detecting CXX compile features - done
+[0.435s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.564s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.620s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.656s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.720s] -- Configuring done (0.7s)
+[0.722s] -- Generating done (0.0s)
+[0.723s] -- Build files have been written to: /home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description
+[0.726s] Invoked command in '/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mario/MODELADO/Practicas/MSR_practicas/P3/src/rover_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description
+[0.728s] Invoking command in '/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description -- -j20 -l20
+[0.765s] Invoked command in '/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description -- -j20 -l20
+[0.773s] Invoking command in '/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description
+[0.779s] -- Install configuration: ""
+[0.779s] -- Execute custom install script
+[0.779s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/robots/rover.urdf.xacro
+[0.788s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/arm/gripper.urdf.xacro
+[0.796s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/arm/scara.urdf.xacro
+[0.802s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/base/rover_base.urdf.xacro
+[0.810s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/sensors/camera.urdf.xacro
+[0.817s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/sensors/imu_sensor.urdf.xacro
+[0.823s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/sensors/sensors.urdf.xacro
+[0.830s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/utils/materials.urdf.xacro
+[0.836s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/wheels/rover_wheel.urdf.xacro
+[0.844s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/launch/rover_state_publisher.launch.py
+[0.851s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.001.dae
+[0.859s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.001.dae_history.log
+[0.867s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.002.dae
+[0.875s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.002.dae_history.log
+[0.886s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.003.dae
+[0.892s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.003.dae_history.log
+[0.900s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.004.dae
+[0.908s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.004.dae_history.log
+[0.914s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.005.dae
+[0.926s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.005.dae_history.log
+[0.938s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.008.dae
+[0.945s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.008.dae_history.log
+[0.952s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.010.dae
+[0.958s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.010.dae_history.log
+[0.963s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.011.dae
+[0.970s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.011.dae_history.log
+[0.975s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.012.dae
+[0.983s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.012.dae_history.log
+[0.989s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.013.dae
+[0.995s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.013.dae_history.log
+[1.003s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.014.dae
+[1.010s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.014.dae_history.log
+[1.019s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.018.dae
+[1.026s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.018.dae_history.log
+[1.034s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.022.dae
+[1.044s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.022.dae_history.log
+[1.050s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.029.dae
+[1.057s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.029.dae_history.log
+[1.063s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.031.dae
+[1.069s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.031.dae_history.log
+[1.077s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.032.dae
+[1.085s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.032.dae_history.log
+[1.091s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.dae
+[1.098s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.dae_history.log
+[1.107s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.001.dae
+[1.114s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.001.dae_history.log
+[1.121s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.002.dae
+[1.128s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.002.dae_history.log
+[1.136s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.004.dae
+[1.144s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.004.dae_history.log
+[1.151s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.007.dae
+[1.157s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.007.dae_history.log
+[1.166s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.013.dae
+[1.176s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.013.dae_history.log
+[1.182s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.016.dae
+[1.188s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.016.dae_history.log
+[1.197s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.018.dae
+[1.206s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.018.dae_history.log
+[1.212s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.020.dae
+[1.223s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.020.dae_history.log
+[1.229s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.dae
+[1.238s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cylinder.dae_history.log
+[1.248s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Torus.001.dae
+[1.261s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Torus.001.dae_history.log
+[1.270s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Torus.002.dae
+[1.279s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Torus.002.dae_history.log
+[1.289s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Torus.003.dae
+[1.295s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Torus.003.dae_history.log
+[1.305s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Torus.004.dae
+[1.312s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Torus.004.dae_history.log
+[1.322s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Torus.dae
+[1.330s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Torus.dae_history.log
+[1.343s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/rviz/rover.rviz
+[1.350s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/ament_index/resource_index/package_run_dependencies/rover_description
+[1.357s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/ament_index/resource_index/parent_prefix_path/rover_description
+[1.364s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/environment/ament_prefix_path.sh
+[1.370s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/environment/ament_prefix_path.dsv
+[1.377s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/environment/path.sh
+[1.387s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/environment/path.dsv
+[1.397s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/local_setup.bash
+[1.404s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/local_setup.sh
+[1.412s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/local_setup.zsh
+[1.422s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/local_setup.dsv
+[1.429s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/package.dsv
+[1.436s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/ament_index/resource_index/packages/rover_description
+[1.448s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/cmake/rover_descriptionConfig.cmake
+[1.461s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/cmake/rover_descriptionConfig-version.cmake
+[1.474s] -- Symlinking: /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/package.xml
+[1.492s] Invoked command in '/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description

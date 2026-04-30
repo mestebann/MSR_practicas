@@ -1,0 +1,3 @@
+Instantiated with filepath=None->None, scale=[0.09428590536117554, 0.09428590536117554, 0.24632194638252258], mesh=<bpy_struct, Mesh("Cylinder.016") at 0x7fa8b9858b20>, meshname=Cylinder.016, material=None, mesh_orientation=None
+->trying export of <bpy_struct, Mesh("Cylinder.016") at 0x7fa8b9858b20> to /home/mario/MODELADO/Practicas/MSR_practicas/P2/rover/meshes/dae/Cylinder.016.dae
+->wrote dae to /home/mario/MODELADO/Practicas/MSR_practicas/P2/rover/meshes/dae/Cylinder.016.dae from bpy_types.Mesh

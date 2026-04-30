@@ -1,0 +1,9 @@
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/urjc_excavation_world/CMakeFiles/uninstall.dir
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/urjc_excavation_world/CMakeFiles/urjc_excavation_world_uninstall.dir
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/urjc_excavation_world/CMakeFiles/test.dir
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/urjc_excavation_world/CMakeFiles/edit_cache.dir
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/urjc_excavation_world/CMakeFiles/rebuild_cache.dir
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/urjc_excavation_world/CMakeFiles/list_install_components.dir
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/urjc_excavation_world/CMakeFiles/install.dir
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/urjc_excavation_world/CMakeFiles/install/local.dir
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/urjc_excavation_world/CMakeFiles/install/strip.dir
