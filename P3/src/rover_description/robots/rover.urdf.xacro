@@ -8,6 +8,7 @@
     <xacro:include filename="$(find rover_description)/urdf/arm/gripper.urdf.xacro"/>
     <xacro:include filename="$(find rover_description)/urdf/utils/materials.urdf.xacro"/>
     <xacro:include filename="$(find rover_description)/urdf/sensors/sensors.urdf.xacro"/>
+    <xacro:include filename="$(find rover_description)/urdf/ros2_control.urdf.xacro"/>
 
     <!-- Propiedades -->
     <xacro:property name="PI" value="3.1415926535897931"/>
@@ -15,6 +16,8 @@
     <!-- argumentos -->
     <xacro:arg name="prefix" default=""/>
     <xacro:arg name="robot_ns" default=""/>
+    <xacro:arg name="config_controllers" default="$(find rover_description)/config/rover_controllers.yaml"/>
+    <xacro:arg name="update_rate" default="100"/>
 
     <!-- Base -->
     <xacro:rover_base prefix="$(arg prefix)"/>
@@ -69,5 +72,8 @@
 
     <!-- Sensors -->
     <xacro:rover_sensors prefix="$(arg prefix)"/>
+    
+    <!-- Gazebo ROS control plugins -->
+    <xacro:ros2_control/>
 
 </robot>

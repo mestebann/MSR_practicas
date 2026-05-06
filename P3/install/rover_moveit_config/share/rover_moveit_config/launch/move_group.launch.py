@@ -1,0 +1,1 @@
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/src/rover_moveit_config/launch/move_group.launch.py

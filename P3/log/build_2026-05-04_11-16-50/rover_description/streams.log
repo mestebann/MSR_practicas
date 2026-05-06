@@ -1,0 +1,5 @@
+[0.021s] Invoking command in '/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description -- -j20 -l20
+[0.067s] [0mCMake Error: The source directory "/home/mario/MODELADO/Practicas/MSR_practicas/P3/src/rover_description" does not exist.
+[0.067s] Specify --help for usage, or press the help button on the CMake GUI.[0m
+[0.069s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
+[0.075s] Invoked command in '/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_description -- -j20 -l20

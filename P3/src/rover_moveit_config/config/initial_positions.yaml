@@ -1,0 +1,9 @@
+# Default initial positions for rover's ros2_control fake system
+
+initial_positions:
+  Brazo1_link_joint: 0
+  Brazo2_link_joint: 0
+  Brazo3_link_joint: 0
+  Brazo4_link_joint: 0
+  Gripper1_link_joint: 0
+  Gripper2_link_joint: 0

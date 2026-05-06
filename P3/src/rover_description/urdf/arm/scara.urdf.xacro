@@ -36,7 +36,7 @@
             <child link="${prefix}Brazo1_link"/>
             <xacro:insert_block name="origin"/>
             <axis xyz="0.00000 0.00000 1.00000"/>
-            <limit lower="-3.00000" upper="3.00000" effort="0.00000" velocity="0.00000"/>
+            <limit lower="-3.00000" upper="3.00000" effort="1000" velocity="100.0"/>
         </joint>
 
         <!-- Brazo 2 -->
@@ -72,7 +72,7 @@
             <child link="${prefix}Brazo2_link"/>
             <origin rpy="0.00000 0.00000 0.00000" xyz="1.43431 0.00000 0.19480"/>
             <axis xyz="0.00000 0.00000 1.00000"/>
-            <limit lower="-2.00000" upper="2.00000" effort="0.00000" velocity="0.00000"/>
+            <limit lower="-2.00000" upper="2.00000" effort="1000" velocity="100.0"/>
         </joint>
 
         <!-- Brazo 3 -->
@@ -108,7 +108,7 @@
             <child link="${prefix}Brazo3_link"/>
             <origin rpy="0.00000 0.00000 -1.57080" xyz="1.01188 0.00000 -0.18676"/>
             <axis xyz="0.00000 0.00000 1.00000"/>
-            <limit lower="-1.57000" upper="1.57000" effort="0.00000" velocity="0.00000"/>
+            <limit lower="-1.57000" upper="1.57000" effort="1000" velocity="100.0"/>
         </joint>
 
         <!-- Brazo 4 -->
@@ -144,7 +144,7 @@
             <child link="${prefix}Brazo4_link"/>
             <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00004 -0.14111"/>
             <axis xyz="0.00000 0.00000 1.00000"/>
-            <limit lower="-1.50000" upper="0.50000" effort="0.00000" velocity="0.00000"/>
+            <limit lower="-1.50000" upper="0.50000" effort="1000" velocity="100.0"/>
         </joint>
 
         <!-- Brazo 5 -->
@@ -180,6 +180,47 @@
             <child link="${prefix}Brazo5_link"/>
             <origin rpy="0.00000 0.00000 1.57080" xyz="0.00000 0.00000 -0.28645"/>
         </joint>
+
+
+        <transmission name="${prefix}Brazo1_link_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}Brazo1_link_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}Brazo1_link_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="${prefix}Brazo2_link_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}Brazo2_link_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}Brazo2_link_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="${prefix}Brazo3_link_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}Brazo3_link_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}Brazo3_link_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="${prefix}Brazo4_link_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}Brazo4_link_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}Brazo4_link_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
 
     </xacro:macro>
 

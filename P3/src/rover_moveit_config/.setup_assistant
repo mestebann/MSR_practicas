@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: rover_description
+    relative_path: robots/rover.urdf.xacro
+  srdf:
+    relative_path: config/rover.srdf
+  package_settings:
+    author_name: Mario Esteban
+    author_email: m.esteban.2023@alumnos.urjc.es
+    generated_timestamp: 1777450000

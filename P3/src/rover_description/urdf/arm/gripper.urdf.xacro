@@ -36,7 +36,7 @@
             <child link="${prefix}Gripper1_link"/>
             <origin rpy="1.57080 1.57080 0.00000" xyz="0.00521 0.50000 -0.28960"/>
             <axis xyz="0.00000 0.00000 1.00000"/>
-            <limit lower="0.00000" upper="0.30000" effort="0.00000" velocity="0.00000"/>
+            <limit lower="0.00000" upper="0.30000" effort="1000" velocity="100.0"/>
         </joint>
 
         <!-- Gripper 2 -->
@@ -72,8 +72,28 @@
             <child link="${prefix}Gripper2_link"/>
             <origin rpy="1.57080 1.57080 0.00000" xyz="0.00520 -0.50000 -0.28960"/>
             <axis xyz="0.00000 0.00000 1.00000"/>
-            <limit lower="-0.30000" upper="0.00000" effort="0.00000" velocity="0.00000"/>
+            <limit lower="-0.30000" upper="0.00000" effort="1000" velocity="100.0"/>
         </joint>
+
+        <transmission name="${prefix}Gripper1_link_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}Gripper1_link_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}Gripper1_link_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="${prefix}Gripper2_link_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}Gripper2_link_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}Gripper2_link_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
 
     </xacro:macro>
 

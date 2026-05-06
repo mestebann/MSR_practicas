@@ -34,8 +34,23 @@
       <child link="${prefix}wheel_link"/>
       <origin xyz="${joint_xyz}" rpy="${joint_rpy}"/>
       <axis xyz="0 0 1"/>
-      <limit effort="0.0" velocity="0.0"/>
+      <limit effort="1000.0" velocity="100.0"/>
     </joint>
+
+    <transmission name="${prefix}wheel_link_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}wheel_link_joint">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}wheel_link_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+<gazebo reference="${prefix}wheel_link">
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+</gazebo>
 
   </xacro:macro>
 

@@ -2,11 +2,13 @@
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/arm/gripper.urdf.xacro
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/arm/scara.urdf.xacro
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/base/rover_base.urdf.xacro
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/ros2_control.urdf.xacro
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/sensors/camera.urdf.xacro
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/sensors/imu_sensor.urdf.xacro
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/sensors/sensors.urdf.xacro
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/utils/materials.urdf.xacro
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/urdf/wheels/rover_wheel.urdf.xacro
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/launch/rover_controllers.launch.py
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/launch/rover_state_publisher.launch.py
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.001.dae
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Cube.001.dae_history.log
@@ -70,6 +72,8 @@
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Torus.004.dae_history.log
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Torus.dae
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/meshes/dae/Torus.dae_history.log
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/config/rover_bridge.yaml
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/config/rover_controllers.yaml
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/rover_description/rviz/rover.rviz
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/ament_index/resource_index/package_run_dependencies/rover_description
 /home/mario/MODELADO/Practicas/MSR_practicas/P3/install/rover_description/share/ament_index/resource_index/parent_prefix_path/rover_description

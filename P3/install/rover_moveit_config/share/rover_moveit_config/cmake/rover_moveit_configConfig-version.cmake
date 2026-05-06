@@ -1,0 +1,1 @@
+/home/mario/MODELADO/Practicas/MSR_practicas/P3/build/rover_moveit_config/ament_cmake_core/rover_moveit_configConfig-version.cmake

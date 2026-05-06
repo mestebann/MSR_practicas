@@ -16,7 +16,7 @@ set(_rover_description_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT rover_description_FIND_QUIETLY)
-  message(STATUS "Found rover_description: 0.0.1 (${rover_description_DIR})")
+  message(STATUS "Found rover_description: 0.0.0 (${rover_description_DIR})")
 endif()
 
 # warn when using a deprecated package
