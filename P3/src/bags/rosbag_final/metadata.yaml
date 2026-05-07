@@ -2,10 +2,10 @@ rosbag2_bagfile_information:
   version: 9
   storage_identifier: mcap
   duration:
-    nanoseconds: 293962489402
+    nanoseconds: 298731586259
   starting_time:
-    nanoseconds_since_epoch: 1778070376207174573
-  message_count: 17203
+    nanoseconds_since_epoch: 1778081198045283005
+  message_count: 16174
   topics_with_message_count:
     - topic_metadata:
         name: /joint_states
@@ -28,7 +28,7 @@ rosbag2_bagfile_information:
               nsec: 854775807
             avoid_ros_namespace_conventions: false
         type_description_hash: RIHS01_a13ee3a330e346c9d87b5aa18d24e11690752bd33a0350f11c5882bc9179260e
-      message_count: 5861
+      message_count: 5939
     - topic_metadata:
         name: /imu
         type: sensor_msgs/msg/Imu
@@ -50,7 +50,7 @@ rosbag2_bagfile_information:
               nsec: 854775807
             avoid_ros_namespace_conventions: false
         type_description_hash: RIHS01_7d9a00ff131080897a5ec7e26e315954b8eae3353c3f995c55faf71574000b5b
-      message_count: 8908
+      message_count: 9052
     - topic_metadata:
         name: /cmd_vel
         type: geometry_msgs/msg/Twist
@@ -72,7 +72,7 @@ rosbag2_bagfile_information:
               nsec: 854775807
             avoid_ros_namespace_conventions: false
         type_description_hash: RIHS01_9c45bf16fe0983d80e3cfe750d6835843d265a9a6c46bd2e609fcddde6fb8d2a
-      message_count: 2434
+      message_count: 1183
   compression_format: ""
   compression_mode: ""
   relative_file_paths:
@@ -80,9 +80,9 @@ rosbag2_bagfile_information:
   files:
     - path: rosbag_final_0.mcap
       starting_time:
-        nanoseconds_since_epoch: 1778070376207174573
+        nanoseconds_since_epoch: 1778081198045283005
       duration:
-        nanoseconds: 293962489402
-      message_count: 17203
+        nanoseconds: 298731586259
+      message_count: 16174
   custom_data: ~
   ros_distro: jazzy
